@@ -98,5 +98,17 @@ const navLinks = document.querySelector(".nav-links");
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("show");
 });
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_skpx5ot", "template_0rkq5y6", this)
+    .then(() => {
+      this.style.display = "none";
+      document.getElementById("thank-you-message").style.display = "block";
+    }, (error) => {
+      alert("Pesan gagal dikirim. Silakan coba lagi.");
+      console.error("EmailJS error:", error);
+    });
+});
 
   
