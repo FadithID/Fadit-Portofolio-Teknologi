@@ -101,14 +101,14 @@ hamburger.addEventListener("click", () => {
 document.getElementById("contact-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  emailjs.sendForm("service_skpx5ot", "template_0rkq5y6", this)
+  const form = this;
+
+  emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form)
     .then(() => {
-      this.style.display = "none";
+      form.style.display = "none";
       document.getElementById("thank-you-message").style.display = "block";
     }, (error) => {
-      alert("Pesan gagal dikirim. Silakan coba lagi.");
+      alert("Gagal mengirim pesan: " + error.text);
       console.error("EmailJS error:", error);
     });
 });
-
-  
