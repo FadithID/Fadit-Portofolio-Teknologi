@@ -103,7 +103,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
 
   const form = this;
 
-  emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form)
+  emailjs.sendForm("service_skpx5ot", "template_0rkq5y6", form)
     .then(() => {
       form.style.display = "none";
       document.getElementById("thank-you-message").style.display = "block";
