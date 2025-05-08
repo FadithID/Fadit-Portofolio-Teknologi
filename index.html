@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fadit | Portofolio Teknologi</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+  (function () {
+    emailjs.init("tO80x0BjJFMOHXfsq"); // ganti dengan public key dari EmailJS
+  })();
+  </script>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
@@ -15,22 +21,24 @@
 
 
   <header class="navbar">
-    <div class="logo">fadit.id</div>
+    <div class="logo">Fadith.id</div>
     <ul class="nav-links">
       <li><a href="#home">Beranda</a></li>
       <li><a href="#about">Tentang Saya</a></li>
       <li><a href="#skills">Keahlian</a></li>
       <li><a href="#projects">Proyek</a></li>
       <li><a href="#gallery">Galeri</a></li>
-      <li><a href="#contact">Kontak</a></li>
+      <li><a href="#contact">Lagu Favorit</a></li>
+      <li><a href="#kirim-pesan">Kirim Pesan</a></li>
     </ul>
     <button id="theme-toggle">☀️</button>
   </header>
 
   <main>
     <section class="hero-section" id="home">
+    <div class="hero-bg"></div>
       <div class="hero-text">
-        <h1>Halo, Saya <span>Fadit</span></h1>
+        <h1>Halo, Saya <span>Fadith</span></h1>
         <p>Seorang pelajar yang tertarik pada dunia teknologi, pengembangan game, dan coding interaktif.</p>
         <a href="#projects" class="btn">Lihat Proyek</a>
       </div>
@@ -41,7 +49,7 @@
 
     <section class="section about" id="about">
       <h2>Tentang Saya</h2>
-      <p>Hai! Nama saya Fadit. Saya adalah seseorang yang sangat menyukai dunia coding dan teknologi, serta punya hobi bermain game di waktu luang. Bagi saya, menulis kode adalah cara untuk menciptakan hal-hal baru, menyelesaikan masalah, dan menuangkan ide-ide kreatif menjadi sesuatu yang nyata.
+      <p>Hai! Nama saya Fadith. Saya adalah seseorang yang sangat menyukai dunia coding dan teknologi, serta punya hobi bermain game di waktu luang. Bagi saya, menulis kode adalah cara untuk menciptakan hal-hal baru, menyelesaikan masalah, dan menuangkan ide-ide kreatif menjadi sesuatu yang nyata.
 
         Ketertarikan saya pada coding dimulai sejak saya penasaran bagaimana sebuah website bisa bekerja. Dari situ, saya mulai belajar HTML, CSS, dan JavaScript, lalu berkembang ke berbagai teknologi seperti React, Node.js, dan bahkan backend development. Saya suka membangun website yang tidak hanya terlihat menarik, tapi juga fungsional dan user-friendly.
         
@@ -91,18 +99,61 @@
     </section>
 
     <section class="section contact" id="contact">
-      <h2>Kontak Saya</h2>
-      <form>
-        <input type="text" placeholder="Nama" required />
-        <input type="email" placeholder="Email" required />
-        <textarea placeholder="Pesan..." rows="4"></textarea>
-        <button class="btn" type="submit">Kirim</button>
-      </form>
-    </section>
+      <h2>🎧 Lagu Favorit Saya</h2>
+      <div class="music-section-wrapper">
+        <!-- Music Box 1 -->
+        <div class="music-box-ig">
+          <div class="music-cover"><img src="img/cover.jpg" alt="Cover Lagu" /></div>
+          <div class="music-text">
+            <h3>John Denver - Take Me Home, Country Roads (Official Audio)</h3>
+            <div class="time-info"><span>0:00</span><span>0:00</span></div>
+            <input type="range" min="0" value="0" />
+            <div class="music-controls"><button>▶️</button></div>
+          </div>
+          <audio loop><source src="audio/background.mp3" type="audio/mpeg" /></audio>
+        </div>
+
+        <!-- Music Box 2 -->
+        <div class="music-box-ig">
+          <div class="music-cover"><img src="img/cover2.jpg" alt="Cover Lagu" /></div>
+          <div class="music-text">
+            <h3>Tentang Perasaanku(TikTok Version)</h3>
+            <div class="time-info"><span>0:00</span><span>0:00</span></div>
+            <input type="range" min="0" value="0" />
+            <div class="music-controls"><button>▶️</button></div>
+          </div>
+          <audio loop><source src="audio/background2.mp3" type="audio/mpeg" /></audio>
+        </div>
+
+        <!-- Music Box 3 -->
+        <div class="music-box-ig">
+          <div class="music-cover"><img src="img/cover3.jpg" alt="Cover Lagu" /></div>
+          <div class="music-text">
+            <h3>Govinda - Hal Hebat (Speed up-reverd) TikTok Version </h3>
+            <div class="time-info"><span>0:00</span><span>0:00</span></div>
+            <input type="range" min="0" value="0" />
+            <div class="music-controls"><button>▶️</button></div>
+          </div>
+          <audio loop><source src="audio/cover3.mp3" type="audio/mpeg" /></audio>
+        </div>
+      </div>
+      <div>
+        <div class="contact-card" id="kirim-pesan">
+          <h2>Kirim Pesan</h2>
+          <form id="contact-form">
+            <input type="text" name="from_name" placeholder="Nama" required />
+            <textarea name="message" placeholder="Pesan..." rows="4" required></textarea>
+            <button class="btn" type="submit">Kirim</button>
+          </form>
+          <div id="thank-you-message" style="display: none; color: green; margin-top: 20px; text-align: center;">
+            Terima kasih sudah menghubungi saya! 😊
+          </div>
+        </div>
+        
   </main>
 
   <footer>
-    <p>&copy; 2025 Fadit. Dibuat dengan semangat teknologi💻 Dan AI🤖</p>
+    <p>&copy; 2025 Fadith. Dibuat dengan semangat teknologi💻 Dan AI🤖</p>
     <div class="footer-social">
       <a href="https://www.youtube.com/channel/UCfRKHvibdM3Gxwolj3eKuYg" target="_blank">YouTube</a>
       <a href="https://www.instagram.com/fadith.id/?next=%2F" target="_blank">Instagram</a>
@@ -110,6 +161,6 @@
       <a href="tel:+6283155418737">📞 0831-5541-8737</a>
     </div>
   </footer>
-  
+
 </body>
 </html>
