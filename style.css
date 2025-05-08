@@ -628,7 +628,7 @@ html, body {
   }
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 40px; /* tinggi navbar agar konten tidak tertutup */
+    scroll-padding-top: 10px; /* tinggi navbar agar konten tidak tertutup */
   }
   .section h2,
 #kirim-pesan {

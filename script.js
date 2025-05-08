@@ -59,7 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
       slider.max = audio.duration;
       duration.textContent = formatTime(audio.duration);
     });
-  
+    audio.addEventListener("canplay", () => {
+      slider.max = audio.duration;
+      duration.textContent = formatTime(audio.duration);
+    });
+      
     audio.addEventListener("timeupdate", () => {
       slider.value = audio.currentTime;
       currentTime.textContent = formatTime(audio.currentTime);
@@ -87,11 +91,3 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute("href"));
-      target.scrollIntoView({ behavior: "smooth" });
-    });
-  });
-  
